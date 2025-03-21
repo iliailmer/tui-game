@@ -1,3 +1,4 @@
+// TODO: add some sort of AI for enemies?
 #include <curses.h>
 #include <ncurses.h>
 #include <stdio.h>
@@ -75,6 +76,7 @@ int main(void) {
       }
       break;
     case ' ':
+
       while (y_bullet > 1) {
         mvprintw(y_bullet, x_bullet, BULLET);
         refresh();
@@ -88,6 +90,7 @@ int main(void) {
               x_bullet <= enemies[i].x_coord + ENEMY_SIZE) {
             enemies[i].is_defeated = 1;
             mvprintw(enemies[i].y_coord, enemies[i].x_coord, "    ");
+            break;
           }
         }
       }
